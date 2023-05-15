@@ -1,4 +1,5 @@
-
+ # Netlify link [Open](https://master--incomparable-unicorn-d128c6.netlify.app/)
+ 
 # Histogram app
 
 histogram app has main component as app.js in which there are the state hook. 

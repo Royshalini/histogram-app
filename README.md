@@ -1,70 +1,45 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Histogram app
 
-## Available Scripts
+histogram app has main component as app.js in which there are the state hook. 
+  ### 1. histogramdata
 
-In the project directory, you can run:
+ histogramData initial value is set to an empty array which is updated after an api call to the [https://www.terriblytinytales.com/test.txt] and after getting response from api all the words are then sliced using the space between them and then histogramData is set with lables and dataset 
 
-### `npm start`
+### 2. isLoading
+ is loading is just for showing loading text after submit button 
+ is clicked it's initial value is set to false
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. data 
+ data is used to set the data into which is extracted from [https://www.terriblytinytales.com/test.txt]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Functions
 
-### `npm test`
+1. fetch data which is used for making an api call to [https://www.terriblytinytales.com/test.txt]
+2. exportData is used to create a csv file .
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### fetch function
 
-### `npm run build`
+The fetchData function retrieves text data from a [https://www.terriblytinytales.com/test.txt], converts it to lowercase, splits it into words, and calculates the frequency of each word. The word frequencies are stored in an object named wordFrequency.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### exportData
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The exportData function generates a CSV file from histogram data. It creates a CSV content string by iterating over labels and corresponding dataset values. Then, it creates a Blob object with the CSV content, generates a download URL, creates a link element, and triggers a click event to download the CSV file.
 
-### `npm run eject`
+---
+ <histogram> is accepting 5 paramaents xLables for x-axis labelling which is set to histogram lables for top 20 words .
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+y-axis which is used for number of time a word is occuring 
+width, height for setting up width and height of the histogram
+options is the style which is used for displaying the histogram candles 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+one export button is there and onclick of that function the export data function is running .
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
+### library used 
+1. axios for making an api call 
+2. react-chart-histogram for creating the histogram chart 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

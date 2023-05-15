@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Bar } from "react-chartjs-2";
-import { CategoryScale } from "chart.js";
 import Histogram from "react-chart-histogram";
 
 const App = () => {
